@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+    {% load static %}
+
+    {% block css%}
+
+    <link rel="stylesheet" href={% static 'css/contact.css' %} >
+
+    {% endblock %}
+
+
+{% block navbar%}
+  
+    {% include 'nav.html'%}
+    
+
+{%endblock%}
+
+
+{%block content%}
+
+            
+<!-- Secton 1 -->
+<section class="section1" style="background-image: url(/static/img/my_image.png);">
+
+    <p>CONTACT</p>
+</section>
+<!-- Ends Here -->
+
+
+<!-- Section2 -->
+<section class="section2 container">
+    
+<form action="" method="POST">
+{% csrf_token %}
+
+            <p>GET IN TOUCH</p>
+                
+            <div class="row  py-3">
+                
+                <div class="col-sm-6">
+                    <label for="Exp. Date" class="form-label"> Name</label>
+
+                    <input type="text" class="form-control"  placeholder="Your Name" name="name"  required>
+                    <div class="invalid-feedback">
+                    Valid first name is required.
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+
+                    <label for="Cvc" class="form-label">Email</label>
+
+                    <input type="text" class="form-control" id="lastName" placeholder="Your Email" name="email"  required>
+                    <div class="invalid-feedback">
+                    Valid last name is required.
+                    </div>
+                </div>
+                
+                
+                <div class="col-sm-12">
+                    <label for="Exp. Date" class="form-label">Subject</label>
+
+                    <input type="email" class="form-control"  placeholder="Subject of the Message" name="subject"   required>
+                    <div class="invalid-feedback">
+                    Valid first name is required.
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <label for="Exp. Date" class="form-label">Message</label>
+
+                <textarea name="message" id="" cols="30" rows="10" class="form-control" placeholder="Your Message Here" style="background-color: transparent;" name="message" required>
+
+                </textarea>
+                    <div class="invalid-feedback">
+                    Valid first name is required.
+                    </div>
+
+                </div>
+                
+                    <div class="col-sm-12 " id="button" >
+                        
+                            <button class="btn btn-outline-dark form-control" type="reset">Send Message</button>
+                    </div>
+                
+                
+            </div>
+
+
+</form>
+
+</section>
+<!-- Ends Here -->
+{% endblock%}
+
+
+

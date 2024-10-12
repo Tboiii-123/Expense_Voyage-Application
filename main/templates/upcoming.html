@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css%}
+
+<link rel="stylesheet" href={% static 'css/upcoming.css' %}>
+    
+
+{% endblock%}
+
+
+
+{% block navbar %}
+
+{% include 'nav.html'%}
+    
+
+{% endblock %}
+
+
+
+
+
+
+{% block content%}
+    
+
+<!-- Section1 -->
+<section class="section1">
+  <img src={% static 'img/1.png' %} alt="">
+  <div>
+      <h1 >UPCOMING TRAVELS</h1>
+  
+  
+  </div>
+  
+</section>
+
+<!-- Ends Here -->
+
+
+
+
+<!-- Section2 -->
+
+<section class="section2">
+
+    {% for upcoming in upcomings%}   
+        
+          <div class="container">
+    
+            
+            <div class="card mb-3 py-1" style="max-width: 1400px;" id="card">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src={{upcoming.img.url}} class="img-fluid rounded-start" alt="..." >
+                </div>
+                <div class="col-md-8 mt-5">
+                  <div class="card-body">
+                    <h2 class="card-title">{{upcoming.name}}</h2>             
+                    <p class="card-text"> {{upcoming.country_city}}</p>
+                    
+                    <a  class="btn btn-lg btn-primary">Book</a>
+                              
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+    {%endfor%}
+              
+    </section>
+    <!-- Ends here -->
+    
+{% endblock %}
+
+
+
+
+
+
+
+
+
+ 

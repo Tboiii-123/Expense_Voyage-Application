@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    background-color: white;
+}
+
+
+ul{
+    margin-left: 10%;
+    
+}
+ul li{
+    
+    padding-left: 2%;
+    font-size: 20px;
+    
+}
+nav div div ul li button{
+    padding:0px 3110px;
+}
+#logo{
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 2%;
+}
+
+@media(max-width:1000px){
+    nav div ul li button{
+        width: 100%;
+        
+    
+    }
+    
+    #logo{
+        font-size: 20px;
+        font-weight: 500;
+        margin-left: 0%;
+
+    }
+    
+    
+    
+    ul{
+        margin-left: 0%;
+        
+    }
+    ul li{
+        
+        padding-left: 0%;
+    }
+    
+}
+/* Ends Here */

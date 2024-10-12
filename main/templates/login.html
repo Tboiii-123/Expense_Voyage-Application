@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% load static%}
+
+{% block css%}
+<link rel="stylesheet" href={% static 'css/login.css'%}>
+
+{% endblock %}
+    
+
+
+
+{% block navbar %}
+
+    {% include 'pop.html'%}
+        
+    
+    {% endblock %}
+    
+
+{% block content%}
+
+
+<form method="POST" action=""> 
+    {% csrf_token%}
+
+    
+
+    <div class="container col-xxl-8 px-4 py-5">
+      
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      
+        
+
+        <div class="col-lg-6 outer">
+          
+          <p class="fw-bold  expense" >Expense  V<img src={% static 'img/Group 6.png' %} alt="No_image">yages</p>
+
+         
+         <p class="login">Login</p>
+         
+         <p class="lead dont" >Login to access your Golobe Password</p>
+         <input type="text" class="form-control" placeholder="UserName" id="input" name="user" required >
+         
+
+        <input type="password" class="form-control" placeholder=".........." name="password"  id="input" required >
+       
+        <div class="checkbox mb-3 my-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
+          
+    
+        
+         <input type="submit" class="form-control submit"   value="Login">
+
+         <p class="account">Don't have an account ?<span style="color: red;"><a href={% url 'register'%}>Sign up</a></span></p>
+
+ 
+</form>
+         
+            
+            <div>
+                 <p class="logintext">or login with</p>
+            </div>
+            
+         
+          
+            <div class="authetication">
+
+                <div>
+                    <img src={% static 'img/Vector.png'%} alt="">
+                    
+
+                </div>
+                <div>
+                    <img src={% static 'img/flat-color-icons_google.png'%} alt="">
+                    
+                    
+                    
+                </div>
+                <div>
+                    <img src={% static 'img/apple.png' %} alt="">
+                    
+                </div>
+                
+          </div>  
+      
+        </div>
+
+        <div class="col-10 col-sm-12 col-lg-6">
+         
+          <img src={%static 'img/Rectangle 20.png' %}  class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"  loading="lazy" id="images">
+      
+        </div>
+        
+          
+          </div>
+
+       </div>
+
+    
+{% endblock%}

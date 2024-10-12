@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% load static %}
+
+    {% block css%}
+    <link rel="stylesheet" href={% static 'css/trip.css' %}>
+    
+
+    {% endblock%}
+
+
+
+
+
+    {% block navbar %}
+
+    {% include 'nav.html'%}
+        
+    
+    {% endblock %}
+
+     
+
+{% block content%}
+
+<section class="section1" style="background-image: url(/static/img/home_slider.jpg);">
+  <div class="form-overlay hidden">
+    <h2 class="text-center">Create Your Trip Here!!!</h2>
+    
+    <form method="POST" action="" enctype="multipart/form-data">
+        
+      {% csrf_token %}
+
+      <div class="mb-6">
+        <label for="name" class="form-label" id="label">Name of Trip</label>
+        <input type="text" class="form-control " id="name" placeholder="Enter the name fo the event" name="name" required>
+      </div>
+      <div class="mb-6">
+        <label for="text" class="form-label " id="label">Country Name </label>
+        <input type="text" class="form-control " id="destination" placeholder="Enter your email" name="country" required>
+      </div>
+      <div class="mb-6">
+        <label for="text" class="form-label " id="label">City Name </label>
+        <input type="text" class="form-control " id="destination" placeholder="Enter your email" name="city" required>
+      </div>
+      
+      <div class="mb-6">
+        <label for="date" class="form-label" id="label">Booked Date</label>
+        <input type="date" class="form-control " id="start_date" name="booked" required >
+      </div>
+      
+      <div class="mb-6">
+          <label for="image" class="form-label" id="label">Image[Not Required]</label>
+          <input type="file" class="form-control " id="image" name="image">
+        </div>
+        
+        <div class="d-flex justify-content-center" id="content">
+          <button type="submit" class="btn btn-primary btn-lg w-100 my-5"  onclick="showSpinner()">Submit</button>
+  
+        </div>   
+
+
+  </form>
+
+  </div>
+
+  <div id="spinner" class="d-flex justify-content-center text-primary mt-3">
+      <div class="spinner-border" role="status">
+          
+      </div>
+  </div>
+
+   <!-- Fullscreen overlay -->
+   <div id="overlay" class="overlay"></div>
+
+</section>
+
+
+
+
+
+
+<!-- Section2 -->
+<section class="section2">
+
+{% for trip in trips%}   
+    
+      <div class="container">
+
+        
+        <div class="card mb-3 py-1" style="max-width: 1540px;" id="card">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src={{trip.profile_img.url}} class="img-fluid rounded-start" alt="..." >
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h2 class="card-title">{{trip.name}}</h2>             
+                <p class="card-text">{{trip.country}}, {{trip.country_city}}</p>
+                
+                <p class="card-text">Start-date:{{trip.date_booked}} </p>
+                          
+                <a href="{% url 'trip_details' trip.id %}" class="btn btn-outline-primary">View details &#8594</a>
+                          
+                <a href="{% url 'trip_delete' trip.id %}" class="btn btn-outline-danger">Delete</a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{%endfor%}
+          
+</section>
+<!-- Ends here -->
+
+{% endblock %}
+
+
+{% block js%}
+  <script src={% static 'js/trip.js' %} ></script>
+
+  {% endblock %}
+<!-- Ends Here -->
+</body>
+
+
+</html>

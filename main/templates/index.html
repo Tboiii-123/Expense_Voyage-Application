@@ -1,0 +1,344 @@
+{% extends "base.html" %}
+{% load static %}
+
+    {% block css%}
+    <link rel="stylesheet" href={% static 'css/style.css' %}>
+
+
+    {% endblock%}
+
+
+
+
+    
+
+{% block navbar %}
+
+
+{% include 'nav.html'%}
+    
+
+
+{% endblock %}
+
+
+
+  {% block content %}
+  
+
+<!-- Section1 -->
+<section class="section1">
+    <img src={% static 'img/1.png' %}  alt="">
+    
+    <div>
+      
+        <h1 >HELPING OTHERS  <br> LIVE & TRAVEL</h1>
+    <p >Special offers to suit your plan</p>
+    
+    </div>
+    
+</section>
+
+
+<!-- Ends Here -->
+
+
+
+
+<!-- Section2 -->
+<section class="section2">
+
+            
+  <div class="button">
+      
+    <a href={% url 'places' %}><button class="btn btn-outline-primary btn-lg">View Trip Prices</button></a>
+
+  </div>
+  
+  
+
+    <p class="trip">Your Current Booked Trip</p>
+
+    <!-- Booked Trip row 1 -->
+
+    
+            
+        <div class="container my-5">           
+          <div class="row g-5 justify-content-center" >  
+            {%for trip in trips%}
+                
+            <div class=" col-md-4 col-lg-4 col-sm-6"  >
+              
+                    <div class="card h-100">
+                        <img src={{trip.profile_img.url}} class="card-img-top" alt="No img">
+                        <div class="card-body">
+                          <h2 class="card-text">London</h2>
+                  <p>Barcelona</p>
+                  <p>Start-date: 12/3/2024  </p>
+                    <p>End Date: 12/4/2024</p>
+                    
+                            
+                            <a href="{% url 'trip' %}" class="btn btn-outline-primary">Explore All &#8594</a>
+                            
+                        </div>
+                    </div>
+                    
+            </div>                              
+            {% endfor%}
+    
+        </div>
+    </div>
+    
+            
+    <div class="button">
+      
+      <a href={% url 'trip' %}><button class="btn btn-outline-primary btn-lg">Your Trips are created Here</button></a>
+
+    </div>
+    
+    
+    
+</section>
+<!-- Ends Here -->
+
+
+
+
+
+<section class="section3">
+    <!-- Upcoming Event -->
+    <p class="upcoming">Upcoming Events,Ready for you !!!</p>
+    
+  
+    <div class="container">
+        
+        <div class="row gy-5 justify-content-center">
+          
+            
+    {% for upcoming in upcomings %}
+      
+          <div class="col-md-4 col-lg-4">
+      
+            <div class="card h-100">
+              <img src="{{upcoming.img.url}}" class="card-img-top" alt="No img" id="images">
+              <div class="card-body">
+                <h2 class="card-text">{{upcoming.country}}</h2>
+
+                    <p>{{upcoming.country_city}}</p>
+
+                <a href="{% url 'upcoming' %}" class="btn btn-outline-primary">Explore All &#8594;</a>
+              </div>
+            </div>
+      
+          </div>
+          {% endfor%}
+  
+        </div>
+
+      </div>
+      
+
+      <!-- Second row -->
+
+        
+
+</section>
+
+
+<!-- Section 4 -->
+
+<section class="section4">
+
+  <p class="customer">Customer Reviews</p>
+
+  <div class="container">
+          <div class="row gy-5" >
+            <div class=" col-md-4 col-lg-4 col-sm-12"  >
+                    <div class="card h-100">
+                        
+                        <div class="card-body">
+                          <h3 class="text-xl font-semibold text-gray-900 mb-2">“A real sense of community, nurtured”</h3>
+                          <p class="text-gray-600 text-sm mb-4">Really appreciate the help and support from the staff...</p>
+                          
+                          <div class="flex items-center mt-4">
+                            <!-- Stars -->
+                            <div class="flex items-center text-yellow-400">
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                            </div>
+                          </div>
+                          <p class="text-gray-900 font-semibold mt-2">Eliot</p>
+                          
+                          
+                            
+                        </div>
+                        <img src={% static 'img/review1.png' %} class="card-img-top" alt="No img">
+
+                        
+                    </div>
+            </div>
+            
+
+            <div class=" col-md-4 col-lg-4 col-sm-12 ">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">“The facilities are superb. Clean, slick, bright.</h3>
+                  <p class="text-gray-600 text-sm mb-4">Really appreciate the help and support from the staff...</p>
+                  
+                  <div class="flex items-center mt-4">
+                    <!-- Stars -->
+                    <div class="flex items-center text-yellow-400">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                  <p class="text-gray-900 font-semibold mt-2">Thomas</p>
+                  
+                    
+                </div>
+                <img src={% static "img/review2.png" %} class="card-img-top" alt="No img">
+                
+                </div>
+        </div>
+
+        <div class=" col-md-4 col-lg-4 col-sm-12 ">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">“A real sense of community, nurtured” </h3>
+                  <p class="text-gray-600 text-sm mb-4">
+                    Really appreciate the help and support from the staff during these
+                    tough times. Shoutout to Katie for...
+                  </p>
+                  
+                  <div class="flex items-center mt-4">
+                    <!-- Stars -->
+                    <div class="flex items-center text-yellow-400">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                  <p class="text-gray-900 font-semibold mt-2">Olga</p>
+                  
+                
+            </div>
+            <img src={% static "img/review3.png" %} class="card-img-top" alt="No img">
+            
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+      <div class="button">
+      
+        <button type="button" class="btn btn-outline-primary  btn-lg  " data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Create your review Here</button>
+        
+        <a href="{% url 'reviews' %}" class="btn btn-outline-primary  btn-lg">View All Reviews Here</a>
+                            
+
+      </div>      
+ 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+          <!-- Start Form Here -->
+        <form method="POST" action="">
+            {% csrf_token%}
+                <p>An Image would be generated for you automatically</p>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">Name:</label>
+                  <input type="text" class="form-control" id="recipient-name" name="name" value="{{request.user}}">
+
+                </div>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">Topic:</label>
+                  <input type="text" class="form-control"  name="topic">
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">Additive Message:</label>
+                  <textarea class="form-control" id="message-text" name="message"></textarea>
+                </div>
+                
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" name="review">Send message</button>
+            </div>
+            
+    </form>
+        <!-- End Form Here -->
+    </div>
+  </div>
+</div> 
+
+
+
+
+</section>
+
+<!-- Section5 -->
+    
+
+<section class="section5 container">
+
+
+      <div>
+          <p class="sub">Subscribe News Letter</p>
+          <p>The Travel</p>
+          <p class="get">Get inspired! Receive travel discounts, tips and behind the scenes stories.</p>
+
+          <!-- Form 2 Starts Here -->
+    <form action="" method="POST">
+            {% csrf_token %}
+                  <input type="email" class="form-control" placeholder="Your email address" id="input" value="{{profile.email}}" name="email" required >
+                  
+                    
+            <!-- Button trigger modal -->
+
+          
+                  <button type="submit" class="btn btn-dark" name="mails">
+                    Subscribe
+                      </button>
+                      
+        
+    </form>
+          <!-- Form 2 Ends Here -->
+    
+          
+      </div>
+    
+        <div>
+          <img src={% static "img/mailbox.png" %} alt="No_images">
+        </div>
+
+
+</section>
+
+
+{% endblock %}
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+
+{% block navbar %}
+
+{% include 'nav.html'%}
+    
+{% endblock %}
+
+
+
+{% block css%}
+<link rel="stylesheet" href={% static 'css/reviews.css' %}>
+    
+{% endblock%}
+
+
+
+
+
+{% block content%}
+
+
+ 
+ <div class="container">
+    <div class="row gy-5" >
+      <div class=" col-md-4 col-lg-4 col-sm-12"  >
+              <div class="card h-100">
+                  
+                  <div class="card-body">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">“A real sense of community, nurtured”</h3>
+                    <p class="text-gray-600 text-sm mb-4">Really appreciate the help and support from the staff...</p>
+                    
+                    <div class="flex items-center mt-4">
+                      <!-- Stars -->
+                      <div class="flex items-center text-yellow-400">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                    <p class="text-gray-900 font-semibold mt-2">Eliot</p>
+                    
+                    
+                      
+                  </div>
+                  <img src={% static 'img/review1.png' %} class="card-img-top" alt="No img">
+
+                  
+              </div>
+      </div>
+      
+
+      <div class=" col-md-4 col-lg-4 col-sm-12 ">
+          <div class="card h-100">
+            <div class="card-body">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">“The facilities are superb. Clean, slick, bright.</h3>
+            <p class="text-gray-600 text-sm mb-4">Really appreciate the help and support from the staff...</p>
+            
+            <div class="flex items-center mt-4">
+              <!-- Stars -->
+              <div class="flex items-center text-yellow-400">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <p class="text-gray-900 font-semibold mt-2">Thomas</p>
+            
+              
+          </div>
+          <img src={% static "img/review2.png" %} class="card-img-top" alt="No img">
+          
+          </div>
+  </div>
+
+  <div class=" col-md-4 col-lg-4 col-sm-12 ">
+      <div class="card h-100">
+        <div class="card-body">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">“A real sense of community, nurtured” </h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Really appreciate the help and support from the staff during these
+              tough times. Shoutout to Katie for...
+            </p>
+            
+            <div class="flex items-center mt-4">
+              <!-- Stars -->
+              <div class="flex items-center text-yellow-400">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <p class="text-gray-900 font-semibold mt-2">Olga</p>
+            
+          
+      </div>
+      <img src={% static "img/review3.png" %} class="card-img-top" alt="No img">
+      
+      </div>
+  </div>
+
+</div>
+</div>
+
+
+
+ 
+<div class="container py-5">
+    <div class="row gy-5" >
+        {% for review in reviews%}
+                
+            <div class=" col-md-4 col-lg-4 col-sm-12"  >
+                    <div class="card h-100">
+                        
+                        <div class="card-body">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">{{review.topic}}</h3>
+                            <p class="text-gray-600 text-sm mb-4">{{review.message}}</p>
+                            
+                            <div class="flex items-center mt-4">
+                            <!-- Stars -->
+                            <div class="flex items-center text-yellow-400">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            </div>
+                            <p class="text-gray-900 font-semibold mt-2">{{review.name}}</p>
+                            
+                            
+                        </div>
+
+                        <img src={{ review.image.url}} class="card-img-top" alt="No img"> 
+
+                        {% comment %} 
+                        <img src={{ review.image.url}} class="card-img-top" alt="No img"> {% endcomment %}
+
+                        
+                    </div>
+            </div>
+         {% endfor %}   
+
+
+    </div>
+</div>
+
+{% endblock %}
+ 
+
+
+
+ 

@@ -1,0 +1,194 @@
+ {% extends "base.html" %}
+
+ {% load static %}
+
+
+ {% block css%}
+ <link rel="stylesheet" href={% static 'css/profile.css' %}>
+
+ {% endblock%}
+
+
+
+
+ {% block navbar %}
+
+ {% include 'nav.html'%}
+     
+ 
+ {% endblock %}
+ 
+
+
+ {% block content %}
+  
+<!-- Section 1 -->
+<form method="POST" action="" enctype="multipart/form-data">
+
+  {% csrf_token%}
+
+
+<section class="section1">
+
+        
+        <img src= {% static 'img/banner2.png' %}   alt="" width="100%" id="background">
+
+        
+        
+        <div class="container">
+            
+            <img src= "{{ profile.profile_img.url}}" alt="" id="profile">
+            
+        
+        </div>
+
+        <div class="upload">
+            <input type="file" name="image" id="upload" name="image" >
+        
+        </div>
+        
+        
+</section>
+
+<!-- Ends Here -->
+
+
+
+
+<!-- Section2 -->
+
+
+
+<section class="section2">
+
+
+        <div class="form">
+
+          
+            <div class="mb-3 row">
+                <label  class="col-sm-4 col-form-label ">User Name</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="inputPassword" placeholder="Johnny" value={{user.username}}>
+                </div>
+            </div>
+                
+            <div class="row mb-3">
+                <label for="name" class="col-sm-4 col-form-label ">Name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="name" placeholder="John Doe" value="{{user.first_name}} {{user.last_name}}">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="email" class="col-sm-4 col-form-label ">Email</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" name="email" placeholder="JohnDoe@gmail.com" value={{profile.email}}>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="number" class="col-sm-4 col-form-label ">Phone Number</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="number" placeholder="090765790965" value={{profile.number}} >
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="dob" class="col-sm-4 col-form-label ">Date of Birth</label>
+                <div class="col-sm-8">
+                  <!-- We add the filter tag for the date input in django -->
+                    <input type="date" class="form-control" name="dob" placeholder="" value={{profile.Dob|date:'Y-m-d'}} >
+                </div>
+            </div>
+            <div class="row mb-3">
+
+                <label for="address" class="col-sm-4 col-form-label ">Address</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="address" placeholder="JohnDoe street Near First Bank Station " value="{{profile.address}}" >
+                </div>
+            </div>        
+
+            <div class="button">
+              
+                    
+                <button class="btn btn-danger btn-lg" ><a href="{% url 'index' %} " style="text-decoration:none;color:white;">Cancel</a></button>
+              
+              
+                
+                  
+                    <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+    
+                
+
+              </div>
+
+
+</form>            
+            
+        </div>
+
+</section>
+
+<!-- End Here -->
+
+
+<!-- Section3 -->
+
+
+
+<section class="section5 container">
+
+
+    <div>
+        <p class="sub">Subscrib News Letter</p>
+        <p>The Travel</p>
+        <p class="get">Get inspired! Receive travel discounts, tips and behind the scenes stories.</p>
+        <form action="">
+         
+          <input type="email" class="form-control" placeholder="Your email address" required id="input">
+          
+            
+    <!-- Button trigger modal -->
+
+   
+          <button type="submit" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+            Subscribe
+              </button>
+              
+            <!-- Modal -->
+   <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h1 style="color: green;">Subscribed Successfully</h1>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+</form>
+        
+    </div>
+  
+      <div>
+        <img src={% static 'img/mailbox.png' %} alt="No_images">
+
+        
+      </div>
+  
+  
+
+    </section>
+
+
+<!-- Ends Here -->
+{% endblock %}

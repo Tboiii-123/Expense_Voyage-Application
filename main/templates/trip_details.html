@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+
+
+    <link rel="stylesheet" href="trip-details.css">
+
+    
+    
+    {% block navbar %}
+
+    {% include 'nav.html'%}
+        
+    
+    {% endblock %}
+     
+<!-- Section1 -->
+
+<section class="section1">
+    <img src="images/portrati2.avif" alt="">
+    <div>
+        <h1>ADD ITENERARY HERE </h1>
+    
+    
+    </div>
+    
+</section>
+
+<!-- Ends Here -->
+
+
+<!-- Section2 -->
+<section class="section2">
+   
+    <div class="mt-3  mx-5">
+        <form>
+          <div class="row">
+            <div class="col-md-4">
+              <select name="select" id="select" class="form-control py-4" >
+
+                <option value="">Transportation</option>
+                <option value="">Lodging</option>
+                <option value="">Activity</option>
+                
+              </select>
+              
+            </div>
+            <div class="col-md-4">
+              <textarea class="form-control" rows="3" placeholder="Item Name"></textarea>
+            </div>
+            <div class="col-md-4">
+              <textarea class="form-control" rows="3" placeholder="Details"></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+
+</section>
+
+<!-- Ends Here -->
+
+
+
+<!-- Section3 -->
+<section class="section3 container">
+    
+<table border="2" >
+    <tr>
+        <th>Category</th>
+        <th>Item Name</th>
+        <th>Details</th>        
+    </tr>
+
+    <tr>
+        <td>Transportation</td>
+        <td>Traveld By Flight </td>
+        <td>Depature by 10 am, Arrival by 10 30 am</td>
+        
+    </tr>
+    <tr>
+      <td>Transportation</td>
+      <td>Traveld By Flight </td>
+      <td>Depature by 10 am, Arrival by 10 30 am</td>
+      
+  </tr>
+  
+</table>
+
+</section>
+
+<!-- End Here -->
+</body>
+</html>

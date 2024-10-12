@@ -1,0 +1,192 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    background-color: white;
+}
+
+
+ul{
+    margin-left: 10%;
+    
+}
+ul li{
+    
+    padding-left: 5%;
+    font-size: 20px;
+    
+}
+nav div div ul li button{
+    padding:0px 3110px;
+}
+#logo{
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 2%;
+}
+
+@media(max-width:1000px){
+    nav div ul li button{
+        width: 100%;
+        
+    
+    }
+    
+    #logo{
+        font-size: 20px;
+        font-weight: 500;
+        margin-left: 0%;
+
+    }
+    
+    
+    
+    ul{
+        margin-left: 0%;
+        
+    }
+    ul li{
+        
+        padding-left: 0%;
+    }
+    
+}
+/* Ends Here */
+
+
+
+/* Section 1 */
+
+
+.section1{
+    position: relative;
+}
+.section1 img{
+    
+    width: 100%;
+    background-size: cover;
+    height: 600px;
+
+    
+}
+
+
+
+
+.section1 div{
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    left: 40%;
+    
+    color: white;
+    
+    
+}
+.section1 div h1{
+    font-size: 50px;
+}
+
+
+
+@media(max-width:700px){
+    .section1 div{
+        
+        left: 20%;     
+    }
+    .section1 div h1{
+        font-size: 20px;
+    }
+    .section1 div p{
+        padding-top: 30px;
+        font-size: 17px;
+    }
+    .section1 img{
+    
+        width: 100%;
+        background-size: cover;
+        
+        filter: brightness(50%);
+        height: 400px;
+           
+    }
+    
+    
+}
+
+
+/* Ends Here */
+
+
+
+/* Section2 */
+
+.section2{
+    margin-top: 100px;
+}
+
+.section2 #select{
+    font-size: 22px;
+}
+/* Ends Here */
+
+
+/* Section3 */
+
+.section3{
+    margin-top: 100px;
+}
+
+.section3 table{
+    width: 100%;
+    border-collapse: collapse;
+    
+    
+}
+
+.section3 th{
+    border: 1px solid black;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(206, 195, 180);
+    
+    
+}
+.section3 td{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+
+    font-size: 17px;
+    color: white;
+     
+     
+
+}
+
+
+/* End Here */
+
+body{
+    margin-bottom: 300px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css%}
+
+    <link rel="stylesheet" href={% static 'css/manager.css' %} >
+
+{% endblock %}
+
+
+{% block navbar%}
+  
+    {% include 'nav.html'%}
+    
+
+{%endblock%}
+
+
+
+{% block content %}
+
+<!-- Section1 -->
+
+<form method="POST" action="{% url 'manager_searched' %}">
+
+    {% csrf_token %}
+
+<section class="section1 container">
+
+    <div class="row">
+        <div class="col-sm-8">
+          
+          <input type="text"  id="" class="form-control " name="search">
+        
+        </div>
+        
+        <div class="col-sm-4">
+            <button class="btn btn-primary" type="submit">Submit</button>
+
+        </div>
+        
+    </div>
+
+
+</section>
+
+</form>
+  
+<!-- Ends here -->
+
+
+
+<!-- Section2 -->
+<section class="section2">
+
+
+  {% for trip in trips%}
+            
+    <div class="container">
+
+      <div class="card mb-3 py-1" style="max-width: 1540px;" id="card">
+        <div class="row g-0">
+            
+          <div class="col-md-4">
+            <img src="{{trip.profile_img.url}}" class="img-fluid rounded-start" alt="..." >
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h2 class="card-title">{{trip.name}}</h2>             
+              <p class="card-text">{{trip.country}}, {{trip.country_city}}</p>
+              
+              <p class="card-text">Start-date: {{trip.date_booked}} </p>
+                        
+              <a href="#" class="btn btn-success">Approved</a>
+              <a href="#" class="btn btn-danger">Decline</a>
+              
+                        
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endfor%}
+
+          
+</section>
+<!-- Ends here -->
+
+
+{% endblock %}

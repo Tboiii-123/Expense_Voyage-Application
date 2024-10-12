@@ -1,0 +1,212 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.section1{
+    position: relative;
+}
+.section1 img{
+    
+    width: 100%;
+    background-size: cover;
+
+    
+    filter: brightness(50%);
+       
+}
+
+
+.section1 img:hover {
+    
+    width: 100%;
+    opacity:0.8;
+    
+       
+}
+
+.section1 div{
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    left: 40%;
+    
+    color: white;
+    opacity: 1;
+    
+}
+.section1 div h1{
+    font-size: 50px;
+}
+
+.section1 div p{
+    padding-top: 30px;
+    font-size: 20px;
+}
+
+@media(max-width:700px){
+    .section1 div{
+        
+        left: 20%;     
+    }
+    .section1 div h1{
+        font-size: 20px;
+    }
+    .section1 div p{
+        padding-top: 30px;
+        font-size: 17px;
+    }
+    .section1 img{
+    
+        width: 100%;
+        background-size: cover;
+        
+        filter: brightness(50%);
+        height: 400px;
+           
+    }
+    
+    
+}
+
+.section2{
+    margin-top: 50px;
+}
+
+.section2 .trip{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+.section2 .button{
+    font-size: 20px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.section2 .button button{
+    transition: 1.2s;
+
+}
+
+.section2 .button button:hover{
+    font-size: 25px;
+    transform: translateX(2);
+    box-shadow: 2px 2px 2px  2px solid red;
+    
+
+}
+
+/* Ends Here */
+
+
+/* Section3 */
+
+.section3{
+    padding-top: 100px;
+}
+
+.section3 .upcoming{
+    text-align: center;
+    padding-bottom: 50px;
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+
+    
+}
+.section3 #images{
+    opacity: 0.4;
+}
+
+.section3 #images:hover{
+    opacity: 1;
+}
+
+
+/* Ends Here */
+
+
+.section4{
+    padding-top: 100px;
+}
+
+.section4 .customer{
+    text-align: center;
+    padding-bottom: 50px;
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+.section4 .button{
+
+    padding-top: 50px;
+    font-size: 20px;
+    
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+
+}
+/* Ends Here */
+
+.section5{
+    margin-top: 100px;
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(151, 184, 173);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 150px;
+    
+}
+
+.section5 div .sub{
+    font-size: 30px;
+    font-weight: bolder;
+}
+.section5 div .get{
+    font-size: 20px;
+}
+
+.section5 div #input{
+    width: 40%;
+}
+
+.section5 div button{
+    margin-top: 20px;
+
+}
+@media(max-width:800px){
+    .section5 div #input{
+        width: 80%;
+    }
+    
+.section5{
+    
+    display: block;
+    padding-bottom: 50px;
+    
+    
+}
+.section5 div img{
+    display: none;
+}
+   
+}
+/* Ends Here */
+
+
+
+
