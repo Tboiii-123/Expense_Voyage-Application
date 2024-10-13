@@ -14,7 +14,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required,user_passes_test
 
 
-from .models import Profile,Trip,Upcoming,Review,Price
+from .models import Profile,Trip,Upcoming,Review,Price,Itenerary
 
 import os
 
@@ -28,6 +28,8 @@ import smtplib
 #Email and password for the server
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+
+
 
 
 
@@ -341,14 +343,39 @@ def trip(request):
 
      
 @login_required(login_url='/login/')
-def trip_details(request,item):
+def trip_details(request,trip_id):
 
-    trip =Trip.objects.get(id=item)
+    profile =Profile.objects.get(user=request.user)
+
+    trip =Trip.objects.get(id=trip_id,user=request.user)
+
+    itenary =Itenerary.objects.filter(trip=trip,user=profile)
+
+    if request.method=="POST":
+
+        select =request.POST.get('select')
+
+        name =request.POST.get('name')
+
+        details =request.POST.get('details')
+
+
+        real_itenary =Itenerary.objects.create(
+            user =profile,
+            trip =trip,
+            transportation =select,
+            lodging =name,
+            activities =details
+
+        )
+
+        real_itenary.save()
+
+
 
           
     return render(request,'trip_details.html',{
-        'trip':trip
-
+        'itenary':itenary
     })
 
 
@@ -572,10 +599,8 @@ Taiwo
 
 
 Kenny
-12345
+1234
 
 
-Fatty
-fatty
 
 '''
