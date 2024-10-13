@@ -14,7 +14,7 @@ urlpatterns = [
     path('manager_searched/',views.manager_search, name='manager_searched'),
     
     
-    path('trip_details/<int:item>',views.trip_details, name='trip_details'),
+    path('trip_details/<int:trip_id>',views.trip_details, name='trip_details'),
 
     path('trip_delete/<int:item>',views.trip_delete, name='trip_delete'),
     

@@ -100,21 +100,23 @@ class Upcoming(models.Model):
 
 
 
-# class Itenerary(models.Model):
+class Itenerary(models.Model):
 
-#     trip =models.ForeignKey(Trip, on_delete=models.CASCADE)
+     user=models.ForeignKey(Profile,on_delete=models.CASCADE)
 
-#     transportation =models.CharField(max_length=300)
+     trip =models.ForeignKey(Trip, on_delete=models.CASCADE)
 
-#     lodging =models.CharField(max_length=300)
+     transportation =models.CharField(max_length=300)
 
-#     activities =models.CharField(max_length=300)
+     lodging =models.CharField(max_length=300)
+
+     activities =models.CharField(max_length=300)
 
 
 
-#     def __str__(self):
+     def __str__(self):
 
-#         return self.trip
+         return self.trip
 
 
 
