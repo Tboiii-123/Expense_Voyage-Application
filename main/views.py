@@ -35,7 +35,7 @@ from email.mime.multipart import MIMEMultipart
 
 
 #make sure u delete your password before uploading to the github
-passwordName ='roue egvy bumj wkez'
+passwordName =''
 company_email="joshhearns37@gmail.com"
 
 
